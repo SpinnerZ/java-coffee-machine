@@ -23,3 +23,7 @@ Stage 5/6: On a coffee loop
 
 Stage 6/6: Brush up your code
 >Time for some final touch-ups: structure the code so that it runs smoothly.
+
+## See more about me
+
+Leonardo A. de Souza ([lsouza] (lsouza.sleek.page))
