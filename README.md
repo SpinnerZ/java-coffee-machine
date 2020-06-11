@@ -26,4 +26,4 @@ Stage 6/6: Brush up your code
 
 ## See more about me
 
-Leonardo A. de Souza ([@lsouza](lsouza.sleek.page))
+Leonardo A. de Souza ([@lsouza](https://lsouza.sleek.page/))
