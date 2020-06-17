@@ -4,7 +4,7 @@ A small project from JetBrains Academy ( https://hyperskill.org/onboarding/proje
 Learning outcomes
 This project allows you to get a taste of Java. Practice working with classes, challenge yourself with loops and conditions, and get more confident in Java.
 
-Stages completed: 4/6:
+Stages completed: 5/6:
 
 Stage 1/6: Hello, Coffe!
 >Write a program that puts basic information on the screen: give the machine a chance to tell the customers what it’s doing!
