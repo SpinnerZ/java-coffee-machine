@@ -8,25 +8,36 @@ public class CoffeeMachine {
 
         Scanner scanner = new Scanner(System.in);
         CoffeeMachineController coffeeMachineController = new CoffeeMachineController();
-        String action = "";
+        String action;
+        boolean isExit = false;
 
-        System.out.println("\nWrite action (buy, fill, take):");
-        action = scanner.nextLine();
+        do {
+            System.out.println("\nWrite action (buy, fill, take, remaining, exit):");
+            action = scanner.nextLine();
 
-        switch (action) {
-            case "buy":
-                coffeeMachineController.buy();
-                break;
-            case "fill":
-                coffeeMachineController.fill();
-                break;
-            case "take":
-                coffeeMachineController.take();
-                break;
-            default:
-                break;
-        }
-
-        coffeeMachineController.printStatus();
+            switch (action) {
+                case "buy":
+                    coffeeMachineController.buy();
+                    isExit = false;
+                    break;
+                case "fill":
+                    coffeeMachineController.fill();
+                    isExit = false;
+                    break;
+                case "take":
+                    coffeeMachineController.take();
+                    isExit = false;
+                    break;
+                case "remaining":
+                    coffeeMachineController.printStatus();
+                    isExit = false;
+                    break;
+                case "exit":
+                    isExit = true;
+                    break;
+                default:
+                    break;
+            }
+        } while (isExit);
     }
 }

@@ -19,7 +19,6 @@ public class CoffeeMachineController {
         disposableCups = 9;
         money = 550;
         scanner = new Scanner(System.in);
-        printStatus();
     }
 
     public void printStatus() {
@@ -38,6 +37,12 @@ public class CoffeeMachineController {
             return;
         }
 
+        if (!isCoffeeEnoughResources(coffee)) {
+            return;
+        }
+
+        System.out.println("I have enough resources, making you a coffee!");
+
         water -= coffee.getWaterNeeded();
         milk -= coffee.getMilkNeeded();
         coffeeBeans -= coffee.getCoffeeBeansNeeded();
@@ -45,18 +50,39 @@ public class CoffeeMachineController {
         disposableCups--;
     }
 
+    private boolean isCoffeeEnoughResources(Coffee coffee) {
+        if (coffee.getWaterNeeded() > water) {
+            System.out.println("Sorry, not enough water!");
+            return false;
+        }
+        if (coffee.getMilkNeeded() > milk) {
+            System.out.println("Sorry, not enough milk!");
+            return false;
+        }
+        if (coffee.getCoffeeBeansNeeded() > coffeeBeans) {
+            System.out.println("Sorry, not enough coffee beans!");
+            return false;
+        }
+        if (disposableCups < 1) {
+            System.out.println("Sorry, not enough disposable cups!");
+            return false;
+        }
+
+        return true;
+    }
+
     public Coffee coffeeType() {
-        int coffeeType = 0;
+        String coffeeType;
 
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
-        coffeeType = scanner.nextInt();
+        coffeeType = scanner.nextLine();
 
         switch (coffeeType) {
-            case 1:
+            case "1":
                 return new Coffee(250, 0, 16, 4);
-            case 2:
+            case "2":
                 return new Coffee(350, 75, 20, 7);
-            case 3:
+            case "3":
                 return new Coffee(200, 100, 12, 6);
             default:
                 return null;
